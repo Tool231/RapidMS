@@ -28,7 +28,7 @@ Actor correlation: User correlation is defined as the dependency between a use c
 $$
 Corr_{A}\left(U C_{a}, U C_{b}\right)=\left\{\begin{array}{l}
 0, Actor\left(U C_{a}\right) Actor\left(U C_{b}\right)=\varnothing \\
-1, Actor\left(U C_{a}\right) \cap \operatorname{Actor}\left(U C_{b}\right) \neq \varnothing
+1, Actor\left(U C_{a}\right) \cap Actor\left(U C_{b}\right) \neq \varnothing
 \end{array}\right.
 $$
 
