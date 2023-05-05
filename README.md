@@ -43,3 +43,5 @@ Domain correlation: The relevance of the use domain correlation($Corr_D$($UC_a$,
 Let the number of use cases be $N_{UC}$. Then, the correlation matrix M with dimension $N_{UC}$*$N_{UC}$ is obtained according to the three correlations. The element $m_{ij}$ in the i-th row and j-th column of the matrix represents the correlation of the $UseCase_i$ and $UseCase_j$,  which is calculated by adding the three correlations as follows. 
 
 <img width="508" alt="image" src="https://user-images.githubusercontent.com/132594916/236367229-957b1145-e42c-42f9-a41f-7bd6769ac6f6.png">
+
+To standardize the metrics and facilitate comparisons, we defined the Better Metrics Number (BMN) and Euclidean Distance (ED): BMN indicates the number of metrics in which the experimenter's \textit{microservices model} outperforms the expert's, while ED represents the Euclidean distance between the vector consisting of five indicators $V_a$(Function-Coupling Function-Cohesion Modilarity Instability) and the vector comprising the optimal values of the five indicators in the experiment.
