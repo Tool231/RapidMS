@@ -24,11 +24,15 @@ $$
 **UCM**: For two scenarios (use cases), comprehensively calculate their correlation degree from three aspects: user correlation, scenario correlation correlation, and domain concept correlation. 
 
 Actor correlation: User correlation is defined as the dependency between a use case caused by the same user associated with them. In a use case diagram, the relationship between the actor and use cases reflects the interaction between the use cases and the system. Different entities connected to the same actor provide services for the same actor, the similarity between them is defined as, and the set of defined and connected is.
-
-<img width="642" alt="image" src="https://user-images.githubusercontent.com/132594916/236365907-f0a23fb8-a688-47b7-9aeb-46f6eb24b68e.png">
-
+$$
+Corr_A(UC_a,UC_b)=\left\{
+\begin{aligned}
+0, Actor(UC_a) \cap Actor(UC_b) = \varnothing \\
+1, Actor(UC_a) \cap Actor(UC_b) \neq \varnothing  \\
+\end{aligned}
+\right.
+$$
 Function correlation: An Include or Extend relationship between the use cases proves that there is a use-and-be used the relationship between the two associated use cases. As a preliminary solution, the use cases at both ends of the \textit{Include} and Extend are defined as strongly correlated associations. We define $Corr_F$($UC_a$, $UC_b$) to indicate the relevance of the association relationship between use cases. Returns a Bool value indicating whether it is related to having an Include or Extend association.
-
 <img width="643" alt="image" src="https://user-images.githubusercontent.com/132594916/236365921-6fa3001d-bad3-4580-8359-7a7a39835ffe.png">
 
 
