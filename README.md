@@ -4,7 +4,9 @@ We conducted a comparative experiment involving four participants: one expert wi
 **IFN**: Average number of interfaces per microservice(IFN) is described as the average number of interfaces in the system, the smaller the value, the better.In our problem, IFN represents the number of interfaces between microservices and ignores the interfaces provided by the microservice to the user.  
 
 $$
-IFN=\frac{1}{N} \sum_{i=1}^{N} |Interface _{i}|
+Corr_A(UC_a,UC_b)=\left\{ \begin{aligned} 0, Actor(UC_a) \cap Actor(UC_b) = \varnothing \\ 1, Actor(UC_a) \cap Actor(UC_b) \neq \varnothing  \\
+\end{aligned}
+\right.
 $$
 
 **Instability**: Instability is defined as the ratio of the number of interfaces provided by a microservice to the sum of the number of interfaces it provides and the number of interfaces required. The higher Instability is, the more stable the microservice will be.
@@ -24,14 +26,8 @@ $$
 **UCM**: For two scenarios (use cases), comprehensively calculate their correlation degree from three aspects: user correlation, scenario correlation correlation, and domain concept correlation. 
 
 Actor correlation: User correlation is defined as the dependency between a use case caused by the same user associated with them. In a use case diagram, the relationship between the actor and use cases reflects the interaction between the use cases and the system. Different entities connected to the same actor provide services for the same actor, the similarity between them is defined as, and the set of defined and connected is.
-$$
-Corr_A(UC_a,UC_b)=\left\{
-\begin{aligned}
-0, Actor(UC_a) \cap Actor(UC_b) = \varnothing \\
-1, Actor(UC_a) \cap Actor(UC_b) \neq \varnothing  \\
-\end{aligned}
-\right.
-$$
+
+<img width="646" alt="image" src="https://user-images.githubusercontent.com/132594916/236367209-a07e883e-54de-4a69-804f-ca3996e57345.png">
 
 Function correlation: An Include or Extend relationship between the use cases proves that there is a use-and-be used the relationship between the two associated use cases. As a preliminary solution, the use cases at both ends of the \textit{Include} and Extend are defined as strongly correlated associations. We define $Corr_F$($UC_a$, $UC_b$) to indicate the relevance of the association relationship between use cases. Returns a Bool value indicating whether it is related to having an Include or Extend association.
 <img width="643" alt="image" src="https://user-images.githubusercontent.com/132594916/236365921-6fa3001d-bad3-4580-8359-7a7a39835ffe.png">
@@ -46,7 +42,4 @@ Domain correlation: The relevance of the use domain correlation($Corr_D$($UC_a$,
 
 Let the number of use cases be $N_{UC}$. Then, the correlation matrix M with dimension $N_{UC}$*$N_{UC}$ is obtained according to the three correlations. The element $m_{ij}$ in the i-th row and j-th column of the matrix represents the correlation of the $UseCase_i$ and $UseCase_j$,  which is calculated by adding the three correlations as follows. 
 
-$$
-m_{i j}=0.2* Corr_{A}(U C_{i}, U C_{j})+0.3* Corr_{Ass}(U C_{i}, U C_{j})\\+0.5
-* Corr_{E}(U C_{i}, U C_{j})
-$$
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/132594916/236367229-957b1145-e42c-42f9-a41f-7bd6769ac6f6.png">
