@@ -32,6 +32,7 @@ Corr_A(UC_a,UC_b)=\left\{
 \end{aligned}
 \right.
 $$
+
 Function correlation: An Include or Extend relationship between the use cases proves that there is a use-and-be used the relationship between the two associated use cases. As a preliminary solution, the use cases at both ends of the \textit{Include} and Extend are defined as strongly correlated associations. We define $Corr_F$($UC_a$, $UC_b$) to indicate the relevance of the association relationship between use cases. Returns a Bool value indicating whether it is related to having an Include or Extend association.
 <img width="643" alt="image" src="https://user-images.githubusercontent.com/132594916/236365921-6fa3001d-bad3-4580-8359-7a7a39835ffe.png">
 
