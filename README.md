@@ -25,33 +25,23 @@ $$
 
 Actor correlation: User correlation is defined as the dependency between a use case caused by the same user associated with them. In a use case diagram, the relationship between the actor and use cases reflects the interaction between the use cases and the system. Different entities connected to the same actor provide services for the same actor, the similarity between them is defined as, and the set of defined and connected is.
 
-$$
-Corr_{A}(U C_{a}, U C_{b})
-$$
+<img width="642" alt="image" src="https://user-images.githubusercontent.com/132594916/236365907-f0a23fb8-a688-47b7-9aeb-46f6eb24b68e.png">
 
 Function correlation: An Include or Extend relationship between the use cases proves that there is a use-and-be used the relationship between the two associated use cases. As a preliminary solution, the use cases at both ends of the \textit{Include} and Extend are defined as strongly correlated associations. We define $Corr_F$($UC_a$, $UC_b$) to indicate the relevance of the association relationship between use cases. Returns a Bool value indicating whether it is related to having an Include or Extend association.
 
-$$
-\small
-\operatorname{Corr}_{\text {F }}\left(U C_{a}, U C_{b}\right)=\left\{\begin{array}{l}
-0, \text { Association }\left(U C_{a}, U C_{b}\right)=\emptyset \\
-1, \text { Association }\left(U C_{a}, U C_{b}\right) \neq \emptyset
-\end{array}\right.
-$$
+<img width="643" alt="image" src="https://user-images.githubusercontent.com/132594916/236365921-6fa3001d-bad3-4580-8359-7a7a39835ffe.png">
 
 
 
 Domain correlation: The relevance of the use domain correlation($Corr_D$($UC_a$, $UC_b$))is between [0,1], and the higher the value, the higher the domain relevance between the use cases. Let the number of use cases of the system be N, and take $V_{x}$ to be a vector of dimension N. V[i] = 1 means $V_{x}$ uses the $Entity_i$. The domain correlation between use cases $UC_x$ and $UC_y$ is defined as the cosine of the $V_{x}$ and $V_{y}$.
 
-$$
-\operatorname{Corr}_{\text {E }}\left(U C_{a}, U C_{b}\right)=\cos (\theta)=\frac{V_{U C_{x}} \cdot V_{U C_{y}}}{\left\|V_{U C_{x}}\right\| *\left\|V_{U C_{y}}\right\|}
-$$
+<img width="641" alt="image" src="https://user-images.githubusercontent.com/132594916/236365945-055705aa-7c51-4f12-9cd1-312406177ec5.png">
 
 
 
 Let the number of use cases be $N_{UC}$. Then, the correlation matrix M with dimension $N_{UC}$*$N_{UC}$ is obtained according to the three correlations. The element $m_{ij}$ in the i-th row and j-th column of the matrix represents the correlation of the $UseCase_i$ and $UseCase_j$,  which is calculated by adding the three correlations as follows. 
 
 $$
-m_{i j}=0.2* \operatorname{Corr}_{\text {A }}\left(U C_{i}, U C_{j}\right)+0.3* \operatorname{Corr}_{\text {Ass }}\left(U C_{i}, U C_{j}\right)\\+0.5
-* \operatorname{Corr}_{\text {E}}\left(U C_{i}, U C_{j}\right)
+m_{i j}=0.2* Corr_{A}(U C_{i}, U C_{j})+0.3* Corr_{Ass}(U C_{i}, U C_{j})\\+0.5
+* Corr_{E}(U C_{i}, U C_{j})
 $$
