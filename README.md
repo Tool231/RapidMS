@@ -4,9 +4,7 @@ We conducted a comparative experiment involving four participants: one expert wi
 **IFN**: Average number of interfaces per microservice(IFN) is described as the average number of interfaces in the system, the smaller the value, the better.In our problem, IFN represents the number of interfaces between microservices and ignores the interfaces provided by the microservice to the user.  
 
 $$
-Corr_A(UC_a,UC_b)=\left\{ \begin{aligned} 0, Actor(UC_a) \cap Actor(UC_b) = \varnothing \\ 1, Actor(UC_a) \cap Actor(UC_b) \neq \varnothing  \\
-\end{aligned}
-\right.
+IFN=\frac{1}{N} \sum_{i=1}^{N} |Interface _{i}|
 $$
 
 **Instability**: Instability is defined as the ratio of the number of interfaces provided by a microservice to the sum of the number of interfaces it provides and the number of interfaces required. The higher Instability is, the more stable the microservice will be.
